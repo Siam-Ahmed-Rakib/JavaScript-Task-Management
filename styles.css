@@ -4,60 +4,147 @@ body {
     margin: 0 auto;
     padding: 20px;
     line-height: 1.6;
-    }
-    .container {
-    background: #f4f4f4;
+    background-color: #f9f9f9;
+}
+
+.container {
+    background: #ffffff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    #taskForm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#taskForm, #update-task-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
-    }
-    #taskForm input,
-    #taskForm textarea,
-    #taskForm select,
-    #taskForm button {
+}
+
+#taskForm input, 
+#taskForm textarea, 
+#taskForm select, 
+#taskForm button, 
+#update-task-form input, 
+#update-task-form textarea, 
+#update-task-form button {
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    }
-    #taskList {
+    width: 100%;
+}
+
+#taskForm button, 
+#update-task-form button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#taskForm button:hover, 
+#update-task-form button:hover {
+    background-color: #0056b3;
+}
+
+.task-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.task-controls select,
+.task-controls input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(33% - 10px);
+}
+
+#taskList {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    }
-    
-    .task-item {
+}
+
+.task-item {
     background: white;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    }
-    .task-completed {
+}
+
+.task-completed {
     text-decoration: line-through;
     color: #888;
     opacity: 0.7;
-    }
-    .task-actions button {
+}
+
+.task-actions button {
     margin-left: 10px;
     padding: 5px 10px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    }
-    .complete-btn {
+}
+
+.complete-btn {
     background-color: #4CAF50;
     color: white;
-    }
-    .delete-btn {
+}
+
+.delete-btn {
     background-color: #f44336;
     color: white;
-    }
+}
+
+.update-btn {
+    background-color: #FF9800;
+    color: white;
+}
+
+#notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f44336; /* Default red for error */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    z-index: 1000;
+    display: none;
+}
+
+#notification.hidden {
+    display: none;
+}
+
+
+#update-task-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 300px;
+}
+
+#update-task-form.hidden {
+    display: none;
+}

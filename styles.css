@@ -148,3 +148,23 @@ h1 {
 #update-task-form.hidden {
     display: none;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .task-controls {
+        flex-direction: column;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
